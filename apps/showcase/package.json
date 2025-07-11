@@ -15,11 +15,15 @@
         "primevue": "catalog:",
         "primeicons": "catalog:",
         "vue": "^3.5.17",
-        "vue-router": "^4.5.1"
+        "vue-router": "^4.5.1",
+        "yup": "1.4.0",
+        "zod": "3.23.8"
     },
     "devDependencies": {
         "@primevue/nuxt-module": "catalog:",
         "autoprefixer": "^10",
+        "tailwindcss": "^3",
+        "tailwindcss-primeui": "catalog:",
         "nuxt": "catalog:app"
     }
 }
