@@ -1,0 +1,25 @@
+{
+    "name": "showcase",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "nuxt build",
+        "dev": "nuxt dev",
+        "generate": "nuxt generate",
+        "preview": "nuxt preview",
+        "postinstall": "nuxt prepare"
+    },
+    "dependencies": {
+        "@primeuix/themes": "catalog:",
+        "@primevue/forms": "catalog:",
+        "primevue": "catalog:",
+        "primeicons": "catalog:",
+        "vue": "^3.5.17",
+        "vue-router": "^4.5.1"
+    },
+    "devDependencies": {
+        "@primevue/nuxt-module": "catalog:",
+        "autoprefixer": "^10",
+        "nuxt": "catalog:app"
+    }
+}

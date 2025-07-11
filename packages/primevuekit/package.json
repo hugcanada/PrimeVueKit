@@ -1,0 +1,23 @@
+{
+    "name": "primevuekit",
+    "version": "0.0.1",
+    "author": "Danny AI Studio",
+    "description": "A collection of specialized Vue components extending PrimeVue's functionality for enterprise applications.",
+    "homepage": "https://github.com/hugcanada/PrimeVueKit",
+    "main": "./src/index.js",
+    "module": "./src/index.js",
+    "types": "./src/index.d.ts",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "primevue",
+        "vue",
+        "vue.js",
+        "vue3",
+        "ui library",
+        "component library"
+    ],
+    "license": "MIT",
+    "packageManager": "pnpm@10.12.1"
+}
