@@ -1,0 +1,11 @@
+{
+    "main": "./InputDateMask.vue",
+    "module": "./InputDateMask.vue",
+    "types": "./InputDateMask.d.ts",
+    "browser": {
+        "./sfc": "./InputDateMask.vue"
+    },
+    "sideEffects": [
+        "*.vue"
+    ]
+}
