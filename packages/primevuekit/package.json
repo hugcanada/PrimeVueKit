@@ -6,6 +6,18 @@
     "main": "./src/index.js",
     "module": "./src/index.js",
     "types": "./src/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./src/index.js",
+            "require": "./src/index.js",
+            "types": "./src/index.d.ts"
+        },
+        "./inputdatemask": {
+            "import": "./src/inputdatemask/index.js",
+            "require": "./src/inputdatemask/index.js",
+            "types": "./src/inputdatemask/index.d.ts"
+        }
+    },
     "scripts": {
         "build": "NODE_ENV=production INPUT_DIR=src/ OUTPUT_DIR=dist/ pnpm run build:package",
         "build:package": "pnpm run build:prebuild && rollup -c && pnpm run build:postbuild",

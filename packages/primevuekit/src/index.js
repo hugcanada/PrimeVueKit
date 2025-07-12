@@ -3,9 +3,6 @@ import InputDateMask from './inputdatemask/InputDateMask.vue';
 
 export { InputDateMask };
 
-// 导出所有类型
-export * from './inputdatemask/InputDateMask.d.ts';
-
 // 如果有更多组件，在这里添加
 // export { default as Button } from './button/Button.vue';
 // export { default as Input } from './input/Input.vue';

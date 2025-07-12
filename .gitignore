@@ -29,3 +29,6 @@ coverage
 # Custom
 api-generator/typedoc.json
 apps/showcase/components.d.ts
+
+# rollup cache
+.rollup.cache

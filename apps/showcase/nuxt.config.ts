@@ -1,4 +1,5 @@
 import Aura from '@primeuix/themes/aura';
+import { resolve } from 'path';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -14,5 +15,9 @@ export default defineNuxtConfig({
                 preset: Aura
             }
         }
+    },
+    alias: {
+        'primevuekit': resolve(__dirname, '../../packages/primevuekit/src'),
+        'primevuekit/inputdatemask': resolve(__dirname, '../../packages/primevuekit/src/inputdatemask')
     }
 })
