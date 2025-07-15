@@ -87,5 +87,15 @@
 
     const HandleValueChange = (data: ValueChangeData) => {
         changeResult.value = data
+        const newDate = data.value as Date | null
+        if (newDate) {
+            // 将 Date 对象转换为 YYYY/MM/DD 格式的字符串
+            const year = newDate.getFullYear()
+            const month = String(newDate.getMonth() + 1).padStart(2, '0')
+            const day = String(newDate.getDate()).padStart(2, '0')
+            dateString.value = `${year}/${month}/${day}`
+        } else {
+            dateString.value = ''
+        }
     }
 </script>
