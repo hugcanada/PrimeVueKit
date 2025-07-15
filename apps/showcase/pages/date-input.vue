@@ -27,7 +27,7 @@
                     <label class="block text-sm font-medium text-gray-700 mb-2">
                         InputDateMask 组件
                     </label>
-                    <InputDateMask v-model="selectedDate" @valueChange="HandleValueChange" />
+                    <InputDateMask :model-value="selectedDate" @value-change="HandleValueChange" />
                 </div>
                 <div v-if="changeResult" class="text-sm text-gray-600 bg-gray-50 p-3 rounded">
                     <div class="font-medium mb-2">Value Change 结果:</div>
@@ -49,40 +49,63 @@
     const changeResult = ref<ValueChangeData>()
 
     // 计算属性：将 dateString 包装为 Date 对象
-    const selectedDate = computed<Date | null>({
-        get() {
-            if (dateString.value && dateString.value.length === 10) {
-                // 确保格式是 YYYY/MM/DD
-                const parts = dateString.value.split('/')
-                if (parts.length === 3) {
-                    const year = parseInt(parts[0], 10)
-                    const month = parseInt(parts[1], 10) - 1 // 月份从0开始
-                    const day = parseInt(parts[2], 10)
+    // const selectedDate = computed<Date | null>({
+    //     get() {
+    //         if (dateString.value && dateString.value.length === 10) {
+    //             // 确保格式是 YYYY/MM/DD
+    //             const parts = dateString.value.split('/')
+    //             if (parts.length === 3) {
+    //                 const year = parseInt(parts[0], 10)
+    //                 const month = parseInt(parts[1], 10) - 1 // 月份从0开始
+    //                 const day = parseInt(parts[2], 10)
 
-                    // 验证日期的合法性
-                    const date = new Date(year, month, day)
-                    if (
-                        date.getFullYear() === year &&
-                        date.getMonth() === month &&
-                        date.getDate() === day
-                    ) {
-                        return date
-                    }
+    //                 // 验证日期的合法性
+    //                 const date = new Date(year, month, day)
+    //                 if (
+    //                     date.getFullYear() === year &&
+    //                     date.getMonth() === month &&
+    //                     date.getDate() === day
+    //                 ) {
+    //                     return date
+    //                 }
+    //             }
+    //         }
+    //         return null
+    //     },
+    //     set(newDate: Date | null) {
+    //         if (newDate) {
+    //             // 将 Date 对象转换为 YYYY/MM/DD 格式的字符串
+    //             const year = newDate.getFullYear()
+    //             const month = String(newDate.getMonth() + 1).padStart(2, '0')
+    //             const day = String(newDate.getDate()).padStart(2, '0')
+    //             dateString.value = `${year}/${month}/${day}`
+    //         } else {
+    //             dateString.value = ''
+    //         }
+    //     },
+    // })
+
+    const selectedDate = computed<Date | null>(() => {
+        if (dateString.value && dateString.value.length === 10) {
+            // 确保格式是 YYYY/MM/DD
+            const parts = dateString.value.split('/')
+            if (parts.length === 3) {
+                const year = parseInt(parts[0], 10)
+                const month = parseInt(parts[1], 10) - 1 // 月份从0开始
+                const day = parseInt(parts[2], 10)
+
+                // 验证日期的合法性
+                const date = new Date(year, month, day)
+                if (
+                    date.getFullYear() === year &&
+                    date.getMonth() === month &&
+                    date.getDate() === day
+                ) {
+                    return date
                 }
             }
-            return null
-        },
-        set(newDate: Date | null) {
-            if (newDate) {
-                // 将 Date 对象转换为 YYYY/MM/DD 格式的字符串
-                const year = newDate.getFullYear()
-                const month = String(newDate.getMonth() + 1).padStart(2, '0')
-                const day = String(newDate.getDate()).padStart(2, '0')
-                dateString.value = `${year}/${month}/${day}`
-            } else {
-                dateString.value = ''
-            }
-        },
+        }
+        return null
     })
 
     const HandleValueChange = (data: ValueChangeData) => {
