@@ -197,6 +197,7 @@
             // 只有在输入框值与格式化后的日期不同时才更新
             if (inputMaskRef.value !== formattedDate) {
                 inputMaskRef.value = formattedDate
+                emitValueChange(dateValue)
             }
 
             // 如果是通过 DatePicker 选择的日期（不是初始化），关闭 Popover
