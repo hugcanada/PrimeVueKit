@@ -16,8 +16,11 @@ export default defineNuxtConfig({
             }
         }
     },
+    css: [
+        'primeicons/primeicons.css'
+    ],
     alias: {
         'primevuekit': resolve(__dirname, '../../packages/primevuekit/src'),
-        'primevuekit/inputdatemask': resolve(__dirname, '../../packages/primevuekit/src/inputdatemask')
+        'primevuekit/inputdatemask': resolve(__dirname, '../../packages/primevuekit/src/inputdatemask/InputDateMask.vue')
     }
 })
