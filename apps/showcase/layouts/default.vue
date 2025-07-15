@@ -9,11 +9,7 @@
                     <h1 class="text-3xl font-bold text-gray-800">PrimeVueKit Showcase</h1>
 
                     <!-- 导航菜单 -->
-                    <nav class="flex space-x-4">
-                        <NuxtLink to="/" class="px-4 py-2 rounded transition-colors" :class="$route.path === '/' ? 'bg-blue-500 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'"> 首页 </NuxtLink>
-                        <NuxtLink to="/test" class="px-4 py-2 rounded transition-colors" :class="$route.path === '/test' ? 'bg-green-500 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'"> 导入测试 </NuxtLink>
-                        <NuxtLink to="/icons" class="px-4 py-2 rounded transition-colors" :class="$route.path === '/icons' ? 'bg-purple-500 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'"> 图标测试 </NuxtLink>
-                    </nav>
+                    <Navigation />
                 </div>
 
                 <!-- 页面内容 -->
@@ -22,7 +18,3 @@
         </div>
     </div>
 </template>
-
-<style scoped>
-/* 可以在这里添加布局相关的样式 */
-</style>
