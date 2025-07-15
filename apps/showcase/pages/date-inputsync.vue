@@ -26,7 +26,6 @@
 <script setup lang="ts">
     import { ref } from 'vue'
     import { watch, computed } from 'vue'
-    import InputMasks from 'primevue/inputmask'
 
     // 方式1: 从 primevuekit/inputdatemask 导入
     import InputDateMask1 from 'primevuekit/inputdatemask'
@@ -36,7 +35,7 @@
     import type { ValueChangeData } from 'primevuekit/inputdatemask'
 
     const date1 = ref<Date | null>(null)
-    const date2 = ref<string | null>(null)
+    const date2 = ref<Date | null>(null)
 
     watch(date1, (newValue) => {
         if (newValue) {
@@ -47,13 +46,8 @@
             // Subtract one day (86400000 milliseconds)
             date.setTime(date.getTime() - 86400000)
 
-            // Format the date in the same format as date1 (assuming YYYY/MM/DD)
-            const year = date.getFullYear()
-            const month = String(date.getMonth() + 1).padStart(2, '0')
-            const day = String(date.getDate()).padStart(2, '0')
-
             // Set date3 to be date1's second year minus one day
-            date2.value = `${year}/${month}/${day}`
+            date2.value = date
         }
     })
 </script>
