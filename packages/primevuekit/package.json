@@ -13,9 +13,9 @@
             "types": "./src/index.d.ts"
         },
         "./inputdatemask": {
-            "import": "./src/inputdatemask/index.js",
-            "require": "./src/inputdatemask/index.js",
-            "types": "./src/inputdatemask/index.d.ts"
+            "import": "./src/inputdatemask/InputDateMask.vue",
+            "require": "./src/inputdatemask/InputDateMask.vue",
+            "types": "./src/inputdatemask/InputDateMask.d.ts"
         }
     },
     "scripts": {

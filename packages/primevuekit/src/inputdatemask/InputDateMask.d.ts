@@ -10,6 +10,10 @@ export interface InputDateMaskProps {
     inputId?: string
     /** 占位符文本，默认: 'YYYY/MM/DD' */
     placeHolder?: string
+    /** 占位符文本的别名，支持标准的 placeholder 属性 */
+    placeholder?: string
+    /** CSS 类名 */
+    class?: string
 }
 
 
@@ -23,8 +27,6 @@ export interface ValueChangeData {
     formattedString: string
     /** 数据库格式的日期字符串 (yyyy-MM-dd) */
     dateString: string
-    /** 格式是否有效 */
-    isFormatValid: boolean
 }
 
 /**
